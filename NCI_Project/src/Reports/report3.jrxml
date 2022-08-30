@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report3" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5612999e-7233-4910-8186-a01c053e96b4">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     *,
+     quote.`quotation` AS quote_quotation,
+     quote.`date` AS quote_date,
+     quote.`type` AS quote_type,
+     quote.`status` AS quote_status,
+     quote.`description` AS quote_description,
+     quote.`staff` AS quote_staff,
+     quote.`net` AS quote_net,
+     quote.`rate` AS quote_rate,
+     quote.`vat` AS quote_vat,
+     quote.`total` AS quote_total,
+     quote.`customerId` AS quote_customerId
+FROM
+     `quote` quote
+ORDER BY
+     quotation ASC]]>
+	</queryString>
+	<field name="quotation" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="date" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="type" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="status" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="description" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="staff" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="net" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rate" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="vat" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="customerId" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="quote_quotation" class="java.lang.Integer"/>
+	<field name="quote_date" class="java.sql.Timestamp"/>
+	<field name="quote_type" class="java.lang.String"/>
+	<field name="quote_status" class="java.lang.String"/>
+	<field name="quote_description" class="java.lang.String"/>
+	<field name="quote_staff" class="java.lang.String"/>
+	<field name="quote_net" class="java.math.BigDecimal"/>
+	<field name="quote_rate" class="java.math.BigDecimal"/>
+	<field name="quote_vat" class="java.math.BigDecimal"/>
+	<field name="quote_total" class="java.math.BigDecimal"/>
+	<field name="quote_customerId" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="193" y="0" width="213" height="45" uuid="cc100e8a-ff8d-4ebf-a48e-e1cf120f3cfd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Invoices Report]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="406" y="0" width="147" height="20" uuid="5be97177-2bdb-41c0-9fdd-c24745672c43"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="0" y="0" width="134" height="45" uuid="6bd09913-8e38-450d-aeeb-f1b75f3eff3e"/>
+				<imageExpression><![CDATA["C:\\Final Project\\NCI_Project\\src\\HighService\\icon\\HS.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="2" width="44" height="20" uuid="fbaf7524-dbae-4c78-b63b-da717454a45d"/>
+				<text><![CDATA[Invoice]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="44" y="2" width="49" height="20" uuid="ad2be30c-c5e7-45f5-9711-622db4613187"/>
+				<text><![CDATA[Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="93" y="2" width="62" height="20" uuid="f9dec72b-cc42-4a28-b154-ecd57bae5226"/>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="155" y="2" width="119" height="20" uuid="8ff853b8-142f-458d-838d-336ef4e79f25"/>
+				<text><![CDATA[Description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="274" y="2" width="62" height="20" uuid="92353d7f-29d7-4927-96ed-829d26a2ea1e"/>
+				<text><![CDATA[Nett]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="336" y="0" width="32" height="20" uuid="1977c543-82ec-4a30-8a60-2aa68911e1df"/>
+				<text><![CDATA[Rate]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="378" y="2" width="42" height="20" uuid="6911ba38-ca71-437f-bbc2-db5664e4db21"/>
+				<text><![CDATA[Vat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="433" y="2" width="65" height="20" uuid="f852dd68-76ff-4b43-83c4-1501ebb4f1ab"/>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="498" y="2" width="55" height="20" uuid="0a029eaa-2411-4c54-8277-036f5ff5482b"/>
+				<text><![CDATA[CustomerID]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="44" height="20" uuid="becd9d28-cc19-491f-9875-7ceeb67e2c7e"/>
+				<textFieldExpression><![CDATA[$F{quote_quotation}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="44" y="0" width="49" height="20" uuid="9b268e0d-4dae-45dc-a9b3-24fe2048426d"/>
+				<textFieldExpression><![CDATA[$F{quote_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="93" y="0" width="62" height="20" uuid="cd0ef6a3-8e55-4600-ae16-120ea7b97893"/>
+				<textFieldExpression><![CDATA[$F{quote_status}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="155" y="0" width="119" height="20" uuid="e7dcf47d-303f-485d-a755-35cea9ea5293"/>
+				<textFieldExpression><![CDATA[$F{quote_description}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="274" y="0" width="62" height="20" uuid="81d5efca-e918-48b3-963c-32364d30b886"/>
+				<textFieldExpression><![CDATA[$F{quote_net}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="378" y="0" width="42" height="20" uuid="40730a27-40d5-40fc-ba9f-cf27bea9a6d6"/>
+				<textFieldExpression><![CDATA[$F{quote_vat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="433" y="0" width="65" height="20" uuid="ae21e21c-b588-4112-b2d0-a8c033224972"/>
+				<textFieldExpression><![CDATA[$F{quote_total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="498" y="0" width="55" height="20" uuid="2a659db0-774c-489f-9538-fcd6c42729fb"/>
+				<textFieldExpression><![CDATA[$F{quote_customerId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="336" y="0" width="32" height="20" uuid="1fda2d9f-fdbd-49d2-bbf3-cd969a95e0b6"/>
+				<textFieldExpression><![CDATA[$F{quote_rate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="44" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
